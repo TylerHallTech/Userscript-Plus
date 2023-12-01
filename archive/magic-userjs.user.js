@@ -60,7 +60,7 @@
 // @exclude      *://*.*.*/options/*
 // @exclude      *://*.*.*.gov/*
 // @exclude      *://*.*.*/password_reset
-// @require      https://cdn.jsdelivr.net/gh/TylerHallTech/Userscript-Plus@master/archive/ljs.js
+// @require      https://update.greasyfork.org/scripts/23419/634829/ljs.js
 // @resource     uiJs   https://cdn.jsdelivr.net/gh/TylerHallTech/Userscript-Plus@master/archive/ui.js
 // @resource     count  https://greasyfork.org/scripts/by-site.json
 // @resource     adult  https://sleazyfork.org/scripts/by-site.json
@@ -75,8 +75,8 @@
 // @connect      cdn.jsdelivr.net
 // @run-at       document-end
 // ==/UserScript==
-
 // https://greasyfork.org/scripts/23419-l-js/code/ljs.js
+// // @require      https://cdn.jsdelivr.net/gh/TylerHallTech/Userscript-Plus@master/archive/ljs.js
 /**
  * Enable built-in "Greasyfork Search with Sleazyfork Results include"
  * 启用内置"使用 Sleazyfork 搜索"结果包括"
@@ -430,7 +430,7 @@ body.userjs-options .switch label:before {
       <title>Show Site All UserJS</title>
       </head>
       <body style="background: none transparent">
-      <div id="app"></div>
+      <div id="app" style="width:100% !important;></div>
       </body></html>`;
       if (dom.tagName && 'iframe' == dom.tagName.toLowerCase()) {
         let c = dom.contentDocument ?? dom.contentWindow.document;
@@ -494,7 +494,7 @@ body.userjs-options .switch label:before {
     bindEvent() {
       this.timeId = setTimeout(() => {
         qs('#jae_userscript_box').remove();
-      }, this.showTime * 1000);
+      }, this.showTime * 2000);
       this.addEventListener('max', () => {
         this.setSize('90vw', 492);
         clearTimeout(this.timeId);
