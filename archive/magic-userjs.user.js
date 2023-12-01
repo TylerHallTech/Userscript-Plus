@@ -430,7 +430,7 @@ body.userjs-options .switch label:before {
       <title>Show Site All UserJS</title>
       </head>
       <body style="background: none transparent">
-      <div id="app" style="width:100% !important;></div>
+      <div id="app" style="width:100% !important";></div>
       </body></html>`;
       if (dom.tagName && 'iframe' == dom.tagName.toLowerCase()) {
         let c = dom.contentDocument ?? dom.contentWindow.document;
