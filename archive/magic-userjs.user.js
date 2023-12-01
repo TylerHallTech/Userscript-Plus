@@ -239,7 +239,8 @@ body.userjs-popup #app .badge {
     height: 100%;
     border: 0px;
     border-radius: 15px;
-    display: block !important
+    display: block !important;
+    background: transparent;
 }
 
 .jae-userscript span {
