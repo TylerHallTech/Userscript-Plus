@@ -1,26 +1,14 @@
 // ==UserScript==
-// @name         Magic Userscript+ : Show Site All UserJS
-// @name:zh      Magic Userscript+ : 显示当前网站所有可用的UserJS脚本 Jaeger
-// @name:zh-CN   Magic Userscript+ : 显示当前网站所有可用的UserJS脚本 Jaeger
-// @name:zh-TW   Magic Userscript+ : 顯示當前網站所有可用的UserJS腳本 Jaeger
-// @name:ja      Magic Userscript+ : 現在のサイトの利用可能なすべてのUserJSスクリプトを表示するJaeger
-// @name:ru-RU   Magic Userscript+ : Показать пользовательские скрипты (UserJS) для сайта. Jaeger
-// @name:ru      Magic Userscript+ : Показать пользовательские скрипты (UserJS) для сайта. Jaeger
+// @name         Magic Userscript+ (sharmanhall) : Show Site All UserJS
 // @description  Show current site all UserJS, the easier way to install UserJs for Tampermonkey.
-// @description:zh      显示当前网站的所有可用UserJS(Tampermonkey)脚本,交流QQ群:104267383
-// @description:zh-CN   显示当前网站的所有可用UserJS(Tampermonkey)脚本,交流QQ群:104267383
-// @description:zh-TW   顯示當前網站的所有可用UserJS(Tampermonkey)腳本,交流QQ群:104267383
-// @description:ja      現在のサイトで利用可能なすべてのUserJS（Tampermonkey）スクリプトを表示します。
-// @description:ru-RU   Показывает пользовательские скрипты (UserJS) для сайта. Легкий способ установить пользовательские скрипты для Tampermonkey.
-// @description:ru      Показывает пользовательские скрипты (UserJS) для сайта. Легкий способ установить пользовательские скрипты для Tampermonkey.
-// @author       Magic <magicoflolis@tuta.io>
-// @namespace    https://github.com/magicoflolis/Userscript-Plus
-// @homepageURL  https://github.com/magicoflolis/Userscript-Plus
-// @downloadURL  https://cdn.jsdelivr.net/gh/magicoflolis/Userscript-Plus@master/archive/magic-userjs.user.js
-// @updateURL    https://cdn.jsdelivr.net/gh/magicoflolis/Userscript-Plus@master/archive/magic-userjs.user.js
-// @supportURL   https://github.com/magicoflolis/Userscript-Plus/issues/new
-// @version      2.4.16
-// @icon         data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3ggEBCQHM3fXsAAAAVdJREFUOMudkz2qwkAUhc/goBaGJBgUtBCZyj0ILkpwAW7Bws4yO3AHLiCtEFD8KVREkoiFxZzX5A2KGfN4F04zMN+ce+5c4LMUgDmANYBnrnV+plBSi+FwyHq9TgA2LQpvCiEiABwMBtzv95RSfoNEHy8DYBzHrNVqVEr9BWKcqNFoxF6vx3a7zc1mYyC73a4MogBg7vs+z+czO50OW60Wt9stK5UKp9Mpj8cjq9WqDTBHnjAdxzGQZrPJw+HA31oulzbAWgLoA0CWZVBKIY5jzGYzdLtdE9DlcrFNrY98zobqOA6TJKHW2jg4nU5sNBpFDp6mhVe5rsvVasUwDHm9Xqm15u12o+/7Hy0gD8KatOd5vN/v1FozTVN6nkchxFuI6hsAAIMg4OPxMJCXdtTbR7JJCMEgCJhlGUlyPB4XfumozInrupxMJpRSRtZlKoNYl+m/6/wDuWAjtPfsQuwAAAAASUVORK5CYII=
+// @author       Sharmanhall <tyler@tylerhalltech.com>
+// @namespace    https://github.com/TylerHallTech/Userscript-Plus
+// @homepageURL  https://github.com/TylerHallTech/Userscript-Plus
+// @downloadURL  https://cdn.jsdelivr.net/gh/TylerHallTech/Userscript-Plus@master/archive/magic-userjs.user.js
+// @updateURL    https://cdn.jsdelivr.net/gh/TylerHallTech/Userscript-Plus@master/archive/magic-userjs.user.js
+// @supportURL   https://github.com/TylerHallTech/Userscript-Plus/issues/new
+// @version      2.4.17
+// @icon         data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA5NiA5NiI+CjwhLS0gV3JpdHRlbiBmcm9tIHNjcmF0Y2gsIGJhc2VkIG9uIGh0dHBzOi8vZ3JlYXN5Zm9yay5vcmcvYXNzZXRzL2JsYWNrbG9nbzk2LTk0MWE2MzNjOTcxYjI1YzBjOWU5ODJlZDQ5OWI1ZDhjLnBuZyAtLT4KPGNpcmNsZSBmaWxsPSIjMDAwIiByPSI0OCIgY3k9IjQ4IiBjeD0iNDgiLz4KPGNsaXBQYXRoIGlkPSJHcmVhc3lGb3JrQ2lyY2xlQ2xpcCIgY2xpcFBhdGhVbml0cz0idXNlclNwYWNlT25Vc2UiPgoJPGNpcmNsZSBmaWxsPSIjMDAwIiByPSI0NyIgY3k9IjQ4IiBjeD0iNDgiLz4KPC9jbGlwUGF0aD4KPHRleHQgZmlsbD0iI2ZmZiIgY2xpcC1wYXRoPSJ1cmwoI0dyZWFzeUZvcmtDaXJjbGVDbGlwKSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxOCIgZm9udC1mYW1pbHk9IidEZWphVnUgU2FucycsIFZlcmRhbmEsIEFyaWFsLCAnTGliZXJhdGlvbiBTYW5zJywgc2Fucy1zZXJpZiIgbGV0dGVyLXNwYWNpbmc9Ii0wLjc1IiBwb2ludGVyLWV2ZW50cz0ibm9uZSIgc3R5bGU9Ii1tb3otdXNlci1zZWxlY3Q6IG5vbmU7IC1tcy11c2VyLXNlbGVjdDogbm9uZTsgLXdlYmtpdC11c2VyLXNlbGVjdDogbm9uZTsgdXNlci1zZWxlY3Q6IG5vbmU7Ij4KCTx0c3BhbiB4PSI1MSIgeT0iMTMiIHRleHRMZW5ndGg9IjU3Ij49IG51bGw7PC90c3Bhbj4KCTx0c3BhbiB4PSI1NiIgeT0iMzUiIHRleHRMZW5ndGg9Ijk4Ij5mdW5jdGlvbiBpbml0PC90c3Bhbj4KCTx0c3BhbiB4PSI0OSIgeT0iNTciIHRleHRMZW5ndGg9IjExMyI+Zm9yICh2YXIgaSA9IDA7PC90c3Bhbj4KCTx0c3BhbiB4PSI1MCIgeT0iNzkiIHRleHRMZW5ndGg9IjEwNSI+WG1sSHR0cFJlcTwvdHNwYW4+Cgk8dHNwYW4geD0iNDgiIHk9IjEwMSIgdGV4dExlbmd0aD0iODAiPmFwcGVuZENoPC90c3Bhbj4KPC90ZXh0Pgo8cGF0aCBmaWxsPSIjMDAwIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iNCIKCWQ9Ik0gNDQsMjkKCWE2LjM2Mzk2LDYuMzYzOTYgMCwwLDEgMCw5CglsMzYsMzYKCWEzLjI1LDMuMjUgMCwwLDEgLTYuNSw2LjUKCWwtMzYsLTM2CglhNi4zNjM5Niw2LjM2Mzk2IDAsMCwxIC05LDAKCWwtMTksLTE5CglhMS43Njc3NywxLjc2Nzc3IDAsMCwxIDAsLTIuNQoJbDEzLjAsLTEzCglhMS43Njc3NywxLjc2Nzc3IDAsMCwxIDIuNSwwCgl6Ii8+CjxwYXRoIGZpbGw9IiNmZmYiCglkPSJNIDQ0LDI5CglhNi4zNjM5Niw2LjM2Mzk2IDAsMCwxIDAsOQoJbDM2LDM2CglhMy4yNSwzLjI1IDAsMCwxIC02LjUsNi41CglsLTM2LC0zNgoJYTYuMzYzOTYsNi4zNjM5NiAwLDAsMSAtOSwwCglsLTE5LC0xOQoJYTEuNzY3NzcsMS43Njc3NyAwLDAsMSAyLjUsLTIuNQoJbDE0LDE0IDQsLTQgLTE0LC0xNAoJYTEuNzY3NzcsMS43Njc3NyAwLDAsMSAyLjUsLTIuNQoJbDE0LDE0IDQsLTQgLTE0LC0xNAoJYTEuNzY3NzcsMS43Njc3NyAwLDAsMSAyLjUsLTIuNQoJeiIvPgo8L3N2Zz4K
 // @license      MIT
 // @include      *
 // @exclude      *://paypal.com/*
@@ -72,8 +60,8 @@
 // @exclude      *://*.*.*/options/*
 // @exclude      *://*.*.*.gov/*
 // @exclude      *://*.*.*/password_reset
-// @require      https://cdn.jsdelivr.net/gh/magicoflolis/Userscript-Plus@master/archive/ljs.js
-// @resource     uiJs   https://cdn.jsdelivr.net/gh/magicoflolis/Userscript-Plus@master/archive/ui.js
+// @require      https://cdn.jsdelivr.net/gh/TylerHallTech/Userscript-Plus@master/archive/ljs.js
+// @resource     uiJs   https://cdn.jsdelivr.net/gh/TylerHallTech/Userscript-Plus@master/archive/ui.js
 // @resource     count  https://greasyfork.org/scripts/by-site.json
 // @resource     adult  https://sleazyfork.org/scripts/by-site.json
 // @grant        GM_xmlhttpRequest
@@ -96,13 +84,322 @@
  * Включить встроенный "Greasyfork Поиск с Sleazyfork Результаты включают"
  * https://greasyfork.org/scripts/23840
  */
- const sleazyfork_redirect = false, // 'true' to enable, 'false' to disable
- custom_width = '', // Default UserJS width: 90vw | Original UserJS width: 860px
+ const sleazyfork_redirect = true, // 'true' to enable, 'false' to disable
+ custom_width = '90vw', // Default UserJS width: 90vw | Original UserJS width: 860px
  /**
  * Injected stylesheet
- * https://github.com/magicoflolis/Userscript-Plus/tree/master/src/sass
+ * https://github.com/TylerHallTech/Userscript-Plus/tree/master/src/sass
  */
- boxCSS = `*:not(select){scrollbar-color:#fff #2e323d;scrollbar-width:thin}::-webkit-scrollbar{max-width:8px !important;max-height:8px !important}::-webkit-scrollbar-thumb{background:#fff}::-webkit-scrollbar-track{background-color:#2e323d}body.userjs-popup{color:#fff !important;background-color:#2e323d !important;width:800px !important;height:550px;top:0px;left:0px}body.userjs-popup #app{position:fixed;width:inherit;display:grid;grid-template-rows:repeat(4, 1fr)}body.userjs-popup #app .ivu-card{width:100%;height:100%;padding:0px}body.userjs-popup #app .ivu-card-extra{top:8px !important}body.userjs-popup #app .ivu-card-head{border-bottom:1px solid #fff !important;padding:2.5% 16px !important}body.userjs-popup #app .ivu-badge{padding:0px 5px}body.userjs-popup #app .ivu-tooltip{border-color:#fff !important;border-radius:4px !important;background-color:#fff !important}body.userjs-popup #app .ivu-btn-icon-only,body.userjs-popup #app .ivu-modal-body,body.userjs-popup #app .ivu-table{color:#fff !important;background-color:#2e323d !important}body.userjs-popup #app .ivu-btn-icon-only td,body.userjs-popup #app .ivu-btn-icon-only th,body.userjs-popup #app .ivu-modal-body td,body.userjs-popup #app .ivu-modal-body th,body.userjs-popup #app .ivu-table td,body.userjs-popup #app .ivu-table th{color:#fff !important;background-color:#2e323d !important}body.userjs-popup #app .ivu-btn-icon-only-body,body.userjs-popup #app .ivu-modal-body-body,body.userjs-popup #app .ivu-table-body{overflow-x:hidden}body.userjs-popup #app .ivu-btn-icon-only-row-highlight,body.userjs-popup #app .ivu-btn-icon-only-row-hover,body.userjs-popup #app .ivu-modal-body-row-highlight,body.userjs-popup #app .ivu-modal-body-row-hover,body.userjs-popup #app .ivu-table-row-highlight,body.userjs-popup #app .ivu-table-row-hover{color:#9cc3e7 !important}body.userjs-popup #app .card-title{color:#fff !important;cursor:pointer}body.userjs-popup #app .table-footer{position:fixed;bottom:0;padding-left:10px;width:100%;background-color:#fff}body.userjs-popup #app .table-footer a{color:#ed3f14}body.userjs-popup #app .circle{width:56px;height:56px;line-height:56px;border-radius:28px;float:right;right:40px}body.userjs-popup #app .badge{top:-17px;left:-6%;width:26px;height:26px;line-height:26px;border-radius:13px}@media screen and (max-width: 1228px){.jae-userscript{max-width:100%;width:100%;height:100%}}.jae-userscript{position:fixed;width:370px;bottom:10px;right:20px;z-index:9999999999;height:56px;background:rgba(0,0,0,0)}.jae-userscript iframe{width:100%;height:100%;border:0px;border-radius:15px;display:block !important}.jae-userscript span{background-color:#2e323d;color:#fff;width:fit-content;display:block;padding:1rem;border-radius:15px;right:10px;position:fixed}.jae-userscript-shadow{box-shadow:0 1px 4px rgba(0,0,0,.3)}.jae-userscript-shadow:after,.jae-userscript-shadow:before{content:"";position:absolute;z-index:-1;bottom:15px;left:10px;width:50%;height:20%;box-shadow:0 15px 10px rgba(0,0,0,.7)}.jae-userscript-shadow:after{right:10px;left:auto;transform:rotate(3deg)}.jae-userscript-shadow:before{transform:rotate(-3deg)}@media(prefers-color-scheme: dark){body.userjs-options :root{background-color:#202023;color:#e8eaed}body.userjs-options section:not(:first-child){border-top:1px solid #4c4c4e}}body.userjs-options form{font-size:1.25em}body.userjs-options section:not(:first-child){border-top:1px solid #4c4c4e}body.userjs-options section.checkbox>label,body.userjs-options section.checkboxlist>label,body.userjs-options section.select{display:flex;justify-content:space-between;padding:.825em}body.userjs-options section.checkbox>label,body.userjs-options section.checkboxlist>label{cursor:pointer}body.userjs-options section.checkboxlist{padding-left:.825em;padding-bottom:.5em}body.userjs-options section.checkboxlist>label{padding-top:.5em;padding-bottom:.5em}body.userjs-options section.checkboxlist p{margin-bottom:.5em}body.userjs-options .switch{position:relative;width:38px;user-select:none}body.userjs-options .switch input{display:none}body.userjs-options .switch input:checked+label{background-color:#5a6f93;margin-left:0}body.userjs-options .switch input:checked+label:before{right:0px;background-color:#8ab4f8}body.userjs-options .switch label{display:block;overflow:hidden;cursor:pointer;height:16px;padding:0;line-height:16px;border:0px solid #fff;border-radius:20px;background-color:#9aa0a6}body.userjs-options .switch label:before{content:"";display:block;width:20px;height:20px;margin:-2px;background:#dadce0;position:absolute;top:0;right:20px;border-radius:20px}`,
+ boxCSS = `*:not(select) {
+    scrollbar-color: #fff #2e323d;
+    scrollbar-width: thin
+}
+
+::-webkit-scrollbar {
+    max-width: 8px !important;
+    max-height: 8px !important
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff
+}
+
+::-webkit-scrollbar-track {
+    background-color: #2e323d
+}
+
+body.userjs-popup {
+    color: #fff !important;
+    background-color: #2e323d !important;
+    width: 800px !important;
+    height: 550px;
+    top: 0px;
+    left: 0px
+}
+
+body.userjs-popup #app {
+    position: fixed;
+    width: inherit;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr)
+}
+
+body.userjs-popup #app .ivu-card {
+    width: 100%;
+    height: 100%;
+    padding: 0px
+}
+
+body.userjs-popup #app .ivu-card-extra {
+    top: 8px !important
+}
+
+/*body.userjs-popup #app .ivu-card-head {
+    border-bottom: 1px solid #fff !important;
+    padding: 2.5% 16px !important
+}*/
+
+body.userjs-popup #app .ivu-badge {
+    padding: 0px 5px
+}
+
+body.userjs-popup #app .ivu-tooltip {
+    border-color: #fff !important;
+    border-radius: 4px !important;
+    background-color: #fff !important
+}
+
+body.userjs-popup #app .ivu-btn-icon-only,
+body.userjs-popup #app .ivu-modal-body,
+body.userjs-popup #app .ivu-table {
+    color: #fff !important;
+    background-color: #2e323d !important
+}
+
+body.userjs-popup #app .ivu-btn-icon-only td,
+body.userjs-popup #app .ivu-btn-icon-only th,
+body.userjs-popup #app .ivu-modal-body td,
+body.userjs-popup #app .ivu-modal-body th,
+body.userjs-popup #app .ivu-table td,
+body.userjs-popup #app .ivu-table th {
+    color: #fff !important;
+    background-color: #2e323d !important
+}
+
+body.userjs-popup #app .ivu-btn-icon-only-body,
+body.userjs-popup #app .ivu-modal-body-body,
+body.userjs-popup #app .ivu-table-body {
+    overflow-x: hidden
+}
+
+body.userjs-popup #app .ivu-btn-icon-only-row-highlight,
+body.userjs-popup #app .ivu-btn-icon-only-row-hover,
+body.userjs-popup #app .ivu-modal-body-row-highlight,
+body.userjs-popup #app .ivu-modal-body-row-hover,
+body.userjs-popup #app .ivu-table-row-highlight,
+body.userjs-popup #app .ivu-table-row-hover {
+    color: #9cc3e7 !important
+}
+
+body.userjs-popup #app .card-title {
+    color: #fff !important;
+    cursor: pointer
+}
+
+body.userjs-popup #app .table-footer {
+    position: fixed;
+    bottom: 0;
+    padding-left: 10px;
+    width: 100%;
+    background-color: #fff
+}
+
+body.userjs-popup #app .table-footer a {
+    color: #ed3f14
+}
+
+body.userjs-popup #app .circle {
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 28px;
+    float: right;
+    right: 40px
+}
+
+body.userjs-popup #app .badge {
+    top: -17px;
+    left: -6%;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 13px
+}
+
+@media screen and (max-width: 1228px) {
+    .jae-userscript {
+        max-width: 100%;
+        width: 100%;
+        height: 100%
+    }
+}
+
+.jae-userscript {
+    position: fixed;
+    width: 370px;
+    bottom: 10px;
+    right: 20px;
+    z-index: 9999999999;
+    height: 56px;
+    background: rgba(0, 0, 0, 0);
+}
+
+.jae-userscript iframe {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    border-radius: 15px;
+    display: block !important
+}
+
+.jae-userscript span {
+    background-color: #2e323d;
+    color: #fff;
+    width: fit-content;
+    display: block;
+    padding: 1rem;
+    border-radius: 15px;
+    right: 10px;
+    position: fixed
+}
+
+.jae-userscript-shadow {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3)
+}
+
+.jae-userscript-shadow:after,
+.jae-userscript-shadow:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    height: 20%;
+    box-shadow: 0 15px 10px rgba(0, 0, 0, .7)
+}
+
+.jae-userscript-shadow:after {
+    right: 10px;
+    left: auto;
+    transform: rotate(3deg)
+}
+
+.jae-userscript-shadow:before {
+    transform: rotate(-3deg)
+}
+
+@media(prefers-color-scheme: dark) {
+    body.userjs-options :root {
+        background-color: #202023;
+        color: #e8eaed
+    }
+
+    body.userjs-options section:not(:first-child) {
+        border-top: 1px solid #4c4c4e
+    }
+}
+
+body.userjs-options form {
+    font-size: 1.25em
+}
+
+body.userjs-options section:not(:first-child) {
+    border-top: 1px solid #4c4c4e
+}
+
+body.userjs-options section.checkbox>label,
+body.userjs-options section.checkboxlist>label,
+body.userjs-options section.select {
+    display: flex;
+    justify-content: space-between;
+    padding: .825em
+}
+
+body.userjs-options section.checkbox>label,
+body.userjs-options section.checkboxlist>label {
+    cursor: pointer
+}
+
+body.userjs-options section.checkboxlist {
+    padding-left: .825em;
+    padding-bottom: .5em
+}
+
+body.userjs-options section.checkboxlist>label {
+    padding-top: .5em;
+    padding-bottom: .5em
+}
+
+body.userjs-options section.checkboxlist p {
+    margin-bottom: .5em
+}
+
+body.userjs-options .switch {
+    position: relative;
+    width: 38px;
+    user-select: none
+}
+
+body.userjs-options .switch input {
+    display: none
+}
+
+body.userjs-options .switch input:checked+label {
+    background-color: #5a6f93;
+    margin-left: 0
+}
+
+body.userjs-options .switch input:checked+label:before {
+    right: 0px;
+    background-color: #8ab4f8
+}
+
+body.userjs-options .switch label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 16px;
+    padding: 0;
+    line-height: 16px;
+    border: 0px solid #fff;
+    border-radius: 20px;
+    background-color: #9aa0a6
+}
+
+body.userjs-options .switch label:before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: -2px;
+    background: #dadce0;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    border-radius: 20px
+}
+
+
+
+
+
+
+/* Move the close button to the left and add some margin */
+.ivu-card-head .ivu-tooltip-rel {
+    position: relative;
+    left: -10px; /* Adjust this value as needed */
+    margin-right: 5px; /* Adjust this value as needed */
+}
+
+/* Ensure that the card-title doesn't overlap with the close button */
+.ivu-card-head .card-title {
+    display: flex;
+    align-items: center;
+}
+
+/* Optionally, you can adjust the vertical alignment of the close button */
+.ivu-card-head .ivu-tooltip-rel button {
+    vertical-align: middle; /* Adjust this value as needed */
+}
+
+
+@media screen and (max-width: 1228px)
+#app{
+  width:100% !important;
+}
+`,
+
  err = (...error) => {
     console.error('[%cUserJS%c] %cERROR', 'color: rgb(29, 155, 240);', '', 'color: rgb(249, 24, 128);', ...error);
   };
